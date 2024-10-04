@@ -1,0 +1,146 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #6c3483, #58d68d);
+    color: white;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: rainbow 5s infinite;
+}
+
+@keyframes rainbow {
+    0% { color: #ff73b9; }
+    20% { color: #ff73d6; }
+    40% { color: #ff73ff; }
+    60% { color: #b973ff; }
+    80% { color: #73b9ff; }
+    100% { color: #ff73b9; }
+}
+
+.status {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    font-size: 2.5em;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.cell.x {
+    color: #ff73b9;
+}
+
+.cell.o {
+    color: #73b9ff;
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+.winner-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.winner-screen.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.winner-text {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.play-again-btn {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    background: #27ae60;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.play-again-btn:hover {
+    background: #2ecc71;
+    transform: scale(1.05);
+}
+
+@media (max-width: 500px) {
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+    }
+}
